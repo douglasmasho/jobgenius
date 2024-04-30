@@ -1,16 +1,17 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
 }
 
 a {
@@ -22,47 +23,270 @@ a:hover {
   color: #535bf2;
 }
 
-body {
+/* body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-}
+} */
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
+.button {
+  border-radius: 20px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.7em 2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #0094ff;
   cursor: pointer;
   transition: border-color 0.25s;
+  transition: all 0.2s;
+  color: white;
 }
-button:hover {
+.button:hover {
   border-color: #646cff;
+  color: white;
+  /* transform: scale(1.1); */
+  letter-spacing: 1px;
+  background-color: #646cff;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.button:active {
+  letter-spacing: 0px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.center-all {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.chat-containerr {
+  margin: 15px !important;
+  -webkit-box-shadow: 0px 4px 39px 3px rgba(166, 192, 222, 1);
+  -moz-box-shadow: 0px 4px 39px 3px rgba(166, 192, 222, 1);
+  box-shadow: 0px 4px 39px 3px rgba(166, 192, 222, 1);
+  position: "relative";
+  height: 80%;
+  width: 50%;
+  border-radius: 20px !important;
+  overflow: hidden;
+
+  @media only screen and (max-width: 900px) {
+    width: 95%;
   }
-  a:hover {
-    color: #747bff;
+}
+
+body {
+  margin: 0;
+  scroll-behavior: smooth;
+}
+.logo {
+  width: 500px;
+  will-change: filter;
+  transition: filter 300ms;
+  margin-bottom: 20px;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #000ce9aa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #00c8ffaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-  button {
-    background-color: #f9f9f9;
+  to {
+    transform: rotate(360deg);
   }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.cs-message--incoming {
+  border-bottom-left-radius: 10px !important;
+}
+
+.cs-message--outgoing {
+  border-bottom-right-radius: 10px !important;
+}
+
+.homebg {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./assets/bg.png);
+  background-size: cover;
+  background-position: center;
+  flex-direction: column;
+}
+
+.logo-small {
+  width: 200px;
+}
+
+.nav,
+.nav2 {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  -webkit-box-shadow: 0px 4px 39px 3px rgba(166, 192, 222, 1);
+  -moz-box-shadow: 0px 4px 39px 3px rgba(166, 192, 222, 1);
+  box-shadow: 0px 4px 39px 3px rgba(166, 192, 222, 1);
+  align-items: center;
+  padding: 10px 25px;
+}
+.nav {
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 25px !important;
+}
+.nav2 {
+  justify-content: center;
+}
+
+.selectbg {
+  padding-top: 40px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  background-size: cover;
+  background-position: center;
+  flex-direction: column;
+}
+
+.cs-message-list__scroll-wrapper {
+  padding: 5px 10px !important;
+}
+
+.cs-message {
+  margin-bottom: 15px !important;
+}
+
+.header,
+.sub-header {
+  color: black !important;
+  font-weight: bold;
+}
+
+.header {
+  font-size: 40px;
+  color: #7609b8 !important;
+  margin-bottom: 5px;
+}
+
+.black-text {
+  color: black !important;
+}
+
+.normal-text {
+  font-size: 16px !important;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 95vw;
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media only screen and (max-width: 500px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.level{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.u-margin-bottom{
+  margin-bottom: 30px
+}
+
+
+
+
+.level-pic{
+  cursor: pointer;
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: top;
+  margin: 10px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 4px 39px 3px rgba(166, 192, 222, 1);
+  -moz-box-shadow: 0px 4px 39px 3px rgba(166, 192, 222, 1);
+  box-shadow: 0px 4px 39px 3px rgba(166, 192, 222, 1);
+  transition: all .3s;
+
+}
+
+.level-pic:hover{
+  transform: scale(1.03);
+}
+
+.level-name{
+  font-size: 20px;
+  color: #7609b8 !important
+}
+
+.level-description{
+  font-size: 18px;
+}
+
+.level-pic-1{
+  background-image: url(./assets/primary.png);
+}
+
+.level-pic-2{
+  background-image: url(./assets/highschool.png);
+}
+
+.level-pic-3{
+  background-image: url(./assets/university.jpg);
+}
+
+.level-pic-4{
+  background-image: url(./assets/postgrad.jpg);
+}
+
+.level-description{
+  color: black !important
 }
